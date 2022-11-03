@@ -76,6 +76,15 @@ svg {
 body {
   background-color: #444;
 }
+
+.container {
+  width: 100vw;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -102,4 +111,17 @@ body {
 .banner img {
   position: fixed;
   z-index: -1;
+}
+
+.addNew {
+  height: 2.5rem;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+.addNew input {
+  width: 65%;
+  height: 2.5rem;
+  max-width: 600px;
 }
