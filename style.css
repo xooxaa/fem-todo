@@ -68,6 +68,11 @@ svg {
 
 /* End of CSS Reset */
 /********************/
+
+* {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 body {
   background-color: #444;
 }
@@ -75,14 +80,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1rem 4rem;
+  margin: 2rem 2rem;
 }
 
 .header h1 {
   text-transform: uppercase;
   font-size: 2rem;
   font-weight: 900;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
+  color: white;
 }
 
 .header img {
