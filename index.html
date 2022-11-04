@@ -4,26 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <title>xx -todo</title>
+    <!-- <link rel="icon" type="image/x-icon" href="favicon.ico" /> -->
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <div class="banner">
-      <img src="/images/bg-mobile-dark.jpg" alt="r" />
+      <img src="/images/bg-mobile-light.jpg" alt="r" />
     </div>
+
     <div class="container">
       <div class="header">
         <h1>Todo</h1>
-        <img src="/images/icon-sun.svg" alt="sun" />
+        <img src="/images/icon-sun.svg" alt="sun" id="themeSwitch" />
+        <label id="theme-switch" class="theme-switch" for="checkbox_theme">
+          <input type="checkbox" id="checkbox_theme" />
+        </label>
       </div>
-
       <div class="addNew">
         <img src="/images/icon-check.svg" alt="" />
-        <input type="text" id="newTodo" name="newTodo" />
+        <input type="text" id="newTodo" name="newTodo" placeholder="New Todo" />
         <img src="/images/icon-cross.svg" alt="" />
       </div>
-    </div>
 
+      <div class="todos"></div>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>
