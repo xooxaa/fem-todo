@@ -90,7 +90,7 @@ svg {
   --bg-color: hsl(0, 0%, 98%);
 }
 /* dark theme */
-[data-theme="dark"] {
+[dataTheme="dark"] {
   --color-gray-100: hsl(235, 21%, 11%);
   --color-gray-200: hsl(235, 24%, 19%);
   --color-gray-300: hsl(237, 14%, 26%);
