@@ -44,6 +44,6 @@ function switchTheme(e) {
 toggleSwitch.addEventListener("change", switchTheme, false);
 
 //pre-check the dark-theme checkbox if dark-theme is set
-if (document.documentElement.getAttribute("data-theme") == "dark") {
+if (document.documentElement.getAttribute("dataTheme") == "dark") {
   toggleSwitch.checked = true;
 }
