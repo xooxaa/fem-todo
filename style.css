@@ -286,23 +286,29 @@ body {
   color: hsl(236, 9%, 61%);
   color: var(--font-color-alt);
 
-  height: 2.5rem;
+  min-height: 2.5rem;
   margin: 0 2rem;
   padding: 0.5rem 1.5rem;
 
   border-radius: 0 0 10px 10px;
 }
 
-.count {
+.menu .count {
   width: 7.5rem;
 }
+
 .menu .filter {
   flex-grow: 2;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.clearCompleted {
-  width: 7.5rem;
-  text-align: right;
+
+@media only screen and (min-width: 500px) {
+  .menu .filter {
+    flex-direction: row;
+  }
 }
 
 .menu .filter span {
@@ -315,13 +321,18 @@ body {
   cursor: pointer;
 }
 
-.active {
+.menu .active {
   font-weight: 700;
   color: hsl(220, 98%, 61%);
   color: var(--font-color-filter-active);
 }
 
-.clearCompleted:hover {
+.menu .clearCompleted {
+  width: 7.5rem;
+  text-align: right;
+}
+
+.menu .clearCompleted:hover {
   color: hsl(235, 19%, 35%);
   color: var(--font-color-main);
   cursor: pointer;
