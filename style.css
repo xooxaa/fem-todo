@@ -67,6 +67,7 @@ svg {
 }
 
 /* End of CSS Reset */
+
 /********************/
 /* root/default variables */
 :root {
@@ -224,26 +225,7 @@ body {
   padding: 0 4rem;
 }
 
-.addNew img {
-  position: absolute;
-
-  height: 2rem;
-  padding: 0.5rem;
-  border: none;
-}
-
-.addNew img:first-of-type {
-  left: 0;
-  margin-left: 0.5rem;
-  padding-left: 1rem;
-}
-.addNew img:last-of-type {
-  right: 0;
-  margin-right: 0.5rem;
-  padding-right: 1rem;
-}
-
-.todos .todo {
+.todo {
   min-height: 3rem;
   font-size: 1.5rem;
   display: flex;
@@ -263,18 +245,40 @@ body {
   cursor: pointer;
 }
 
-.todos .todo:first-of-type {
+.todo:first-of-type {
   border-radius: 10px 10px 0 0;
 }
 
-.todos .todo span {
+.todo span {
   flex-grow: 2;
   padding: 0.5rem 1rem;
 }
 
-.todos .todo img {
+.todo img {
   height: 2rem;
   padding: 0.5rem;
+}
+
+.todo img:first-of-type {
+  opacity: 1;
+  border-radius: 50%;
+
+  /* background-color: hsl(0, 0%, 98%);
+  background-color: var(--bg-color-todos); */
+  border: 3px solid hsl(236, 9%, 61%);
+  border: 3px solid var(--font-color-alt);
+}
+
+.checked img:first-of-type {
+  background-image: linear-gradient(
+    -45deg,
+    var(--color-gradiant-700),
+    var(--color-gradiant-300)
+  );
+}
+
+.hide {
+  display: none;
 }
 
 .menu {
