@@ -259,14 +259,18 @@ body {
   padding: 0.5rem;
 }
 
+.todo.checked {
+  text-decoration: line-through;
+  color: #494c6b;
+}
+
 .todo img:first-of-type {
   opacity: 1;
   border-radius: 50%;
 
   /* background-color: hsl(0, 0%, 98%);
   background-color: var(--bg-color-todos); */
-  border: 3px solid hsl(236, 9%, 61%);
-  border: 3px solid var(--font-color-alt);
+  border: 3px solid #494c6b;
 }
 
 .checked img:first-of-type {
