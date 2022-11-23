@@ -1,65 +1,60 @@
-let todos = new Array();
-
+// select newTodo input and todos container
 const newTodoInput = document.querySelector("#newTodo");
 const todosList = document.querySelector(".todos");
-const todoTemp = document.querySelector(".todo-temp");
 
-function max(arr) {
-  let maximum = 0;
-  for (value of arr) {
-    if (value > maximum) {
-      maximum = value;
-    }
-  }
-  return maximum;
-}
-
+// EventListener for new todo entry
+//used to handle adding new todos
 newTodoInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
-    console.log("Adding new ToDo: " + newTodoInput.value);
-
-    let newIndex = 1;
-    if (todos.length === 0) {
-      todoTemp.classList.add("hide");
-    } else {
-      newIndex = max([todos.length, todos[todos.length - 1].index]) + 1;
-    }
-
-    const newTodo = {
-      text: newTodoInput.value,
-      done: false,
-      num: newIndex,
-    };
-
-    todos.push(newTodo);
-    // console.log(todos);
-
+    //create new todo container
     const newTodoElement = document.createElement("div");
     newTodoElement.classList.add("todo");
 
+    //create new checkmark img
     const newTodoCheckmark = document.createElement("img");
     newTodoCheckmark.src = "/images/icon-check.svg";
 
+    //create new todo span
     const newTodoSpan = document.createElement("span");
     newTodoSpan.innerText = newTodoInput.value;
 
+    //create new cross img
     const newTodoCross = document.createElement("img");
     newTodoCross.src = "/images/icon-cross.svg";
 
+    //append checkmark, span and cross to todo container
     newTodoElement.append(newTodoCheckmark);
     newTodoElement.append(newTodoSpan);
     newTodoElement.append(newTodoCross);
 
+    //append todo container to todosList
     todosList.append(newTodoElement);
 
-    // console.dir(newTodoElement);
-
+    //empty input value
     newTodoInput.value = "";
   }
 });
 
-<<<<<<< HEAD
-//event listener for dblclick on todo span
+//EventListener for click on todo span
+//used to handle clicks on checkmark and cross
+todosList.addEventListener("click", (e) => {
+  //check if e.target has a src (hence is an img)
+  if (e.target.src) {
+    //check if e.target is checkmark img
+    if (e.target.src.indexOf("icon-check.svg") > 0) {
+      e.target.parentElement.classList.toggle("checked");
+      console.log(e.target.nextSibling.innerText + " has been un/checked");
+    }
+    //check if e.target is cross img
+    if (e.target.src.indexOf("icon-cross.svg") > 0) {
+      e.target.parentElement.remove();
+      console.log(e.target.previousSibling.innerText + " has been deleted");
+    }
+  }
+});
+
+//EventListener for dblclick on todo span
+//used to handle editing a todo
 todosList.addEventListener("dblclick", (e) => {
   //check if clicked element was span
   if (e.target.tagName == "SPAN") {
@@ -92,22 +87,5 @@ todosList.addEventListener("dblclick", (e) => {
     e.target.nextSibling.focus();
     //remove span
     e.target.remove();
-=======
-todosList.addEventListener("click", (e) => {
-  // console.log(e.target);
-
-  //check if e.target has a src (hence is an img)
-  if (e.target.src) {
-    //check if e.target is checkmark img
-    if (e.target.src.indexOf("icon-check.svg") > 0) {
-      e.target.parentElement.classList.toggle("checked");
-      console.log(e.target.nextSibling.innerText + " has been un/checked");
-    }
-    //check if e.target is cross img
-    if (e.target.src.indexOf("icon-cross.svg") > 0) {
-      e.target.parentElement.remove();
-      console.log(e.target.previousSibling.innerText + " has been deleted");
-    }
->>>>>>> ebaa72356dddbe49d0e4563cbe0824cff8b74aa8
   }
 });
