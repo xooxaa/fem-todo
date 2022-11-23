@@ -270,3 +270,63 @@ clearCompleted.addEventListener("click", () => {
 });
 
 readFromLocalStorage();
+
+const debug1 = document.querySelector(".debug1");
+const debug2 = document.querySelector(".debug2");
+const debug3 = document.querySelector(".debug3");
+const debug4 = document.querySelector(".debug4");
+
+//used to initiate drag and store information about the dragged element
+document.addEventListener("dragstart", function (event) {
+  //update target id and store id to dataTransfer
+  event.target.id = "draggedElement";
+  event.dataTransfer.setData("Text", event.target.id);
+
+  debug1.innerHTML = "dragstart traget id: " + event.target.id;
+});
+
+//fires permanently and is used to identify where the dragged element is currently dragged over
+document.addEventListener("dragover", function (event) {
+  event.preventDefault();
+
+  debug4.innerHTML =
+    "dragover target: " +
+    event.target.nodeName +
+    " / " +
+    event.target.innerText;
+});
+
+//used to register a change in the targeted node
+document.addEventListener("dragleave", function (event) {
+  // console.log(event);
+});
+
+//fired by the target area when drag ends
+document.addEventListener("drop", function (event) {
+  event.preventDefault();
+
+  debug3.innerHTML =
+    "drop target: " + event.target.nodeName + " / " + event.target.innerText;
+
+  document
+    .querySelector(`#${event.dataTransfer.getData("Text")}`)
+    .removeAttribute("id");
+});
+
+//fired by the dragged element when drag ends
+document.addEventListener("dragend", function (event) {
+  console.log(event);
+  event.target.removeAttribute("id");
+});
+
+// dragstart: Sobald Sie ein Element mit gedrückter Maus ziehen, wird der dragstart-Event gefeuert.
+//            Er übergibt dem dataTransfer-Objekt die nötigen Informationen.
+// drag: feuert, solange Sie ein Element oder eine Textauswahl ziehen.
+//       Das mit event.Target ermittelte Target ist das bewegte Element.
+// dragover: löst aus, wenn Sie ein Element oder eine Textauswahl auf/über ein gewünschtes Ziel gezogen haben.
+//           Das mit event.Target ermittelte Target ist das Element, über dem man gerade mit dem bewegten Element schwebt.
+
+// dragenter: löst aus, wenn Sie ein Element oder eine Textauswahl zum gewünschten Ziel gezogen haben.
+// dragleave: dragleave feuert, wenn Sie ein Element oder eine Textauswahl wieder vom gewünschten Ziel wegziehen.
+// drop: löst aus, wenn Sie ein Element oder eine Textauswahl abgelegt haben.
+// dragend: wird ausgelöst, wenn der Ziehvorgang vorzeitig abgebrochen wird.

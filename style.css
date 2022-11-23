@@ -380,17 +380,17 @@ body {
   color: var(--font-color-alt);
 }
 
-/* .debug {
-  width: 40%;
-  margin: 0 auto;
-  font-size: 1.5rem;
+.debug {
+  display: flex;
+  place-content: center;
 }
 
 .debug-item {
   text-align: center;
+  font-size: 1rem;
   color: purple;
 
-  padding: 0.5rem 0;
+  padding: 0.5rem 0.5rem;
   margin: 0.5rem;
   border: 2px solid purple;
 
@@ -400,4 +400,4 @@ body {
 .debug-item:hover {
   background-color: purple;
   color: hsl(0, 0%, 98%);
-} */
+}
