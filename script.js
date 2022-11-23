@@ -330,3 +330,5 @@ document.addEventListener("dragend", function (event) {
 // dragleave: dragleave feuert, wenn Sie ein Element oder eine Textauswahl wieder vom gewünschten Ziel wegziehen.
 // drop: löst aus, wenn Sie ein Element oder eine Textauswahl abgelegt haben.
 // dragend: wird ausgelöst, wenn der Ziehvorgang vorzeitig abgebrochen wird.
+
+// https://wiki.selfhtml.org/wiki/JavaScript/Drag_%26_Drop#DataTransfer_Objekt
