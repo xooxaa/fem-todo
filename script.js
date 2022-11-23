@@ -57,3 +57,39 @@ newTodoInput.addEventListener("keypress", (e) => {
     newTodoInput.value = "";
   }
 });
+
+//event listener for dblclick on todo span
+todosList.addEventListener("dblclick", (e) => {
+  //check if clicked element was span
+  if (e.target.tagName == "SPAN") {
+    //create new input to replace span
+    const newTodoInput = document.createElement("input");
+    //set value of new input to match span text
+    newTodoInput.value = e.target.innerText;
+
+    //add event listeners fro leaving the input
+    ["blur", "keypress"].forEach((evt) =>
+      newTodoInput.addEventListener(evt, (e) => {
+        //check if no key was pressed (blur) or Enter was pressed
+        if (!e.key || e.key === "Enter") {
+          //create new span to replace input
+          const newTodoSpan = document.createElement("span");
+          //set innerText of new span to match input value
+          newTodoSpan.innerText = e.target.value;
+
+          //add span after the input
+          e.target.after(newTodoSpan);
+          //remove input
+          e.target.remove();
+        }
+      })
+    );
+
+    //add input after the span
+    e.target.after(newTodoInput);
+    //put focus on new input
+    e.target.nextSibling.focus();
+    //remove span
+    e.target.remove();
+  }
+});
