@@ -84,11 +84,11 @@ svg {
   --bg-color: hsl(236, 33%, 92%);
   --bg-color-todos: hsl(0, 0%, 98%);
 
-  --banner-src-mobile: url("/images/bg-mobile-light.jpg");
-  --banner-src-tablet: url("/images/bg-tablet-light.jpg");
-  --banner-src-desktop: url("/images/bg-desktop-light.jpg");
+  --banner-src-mobile: url("./images/bg-mobile-light.jpg");
+  --banner-src-tablet: url("./images/bg-tablet-light.jpg");
+  --banner-src-desktop: url("./images/bg-desktop-light.jpg");
 
-  --themeSwitch-src: url("/images/icon-moon.svg");
+  --themeSwitch-src: url("./images/icon-moon.svg");
 }
 /* dark theme */
 [dataTheme="dark"] {
@@ -105,11 +105,11 @@ svg {
   --bg-color: hsl(235, 21%, 11%);
   --bg-color-todos: hsl(235, 24%, 19%);
 
-  --banner-src-mobile: url("/images/bg-mobile-dark.jpg");
-  --banner-src-tablet: url("/images/bg-tablet-dark.jpg");
-  --banner-src-desktop: url("/images/bg-desktop-dark.jpg");
+  --banner-src-mobile: url("./images/bg-mobile-dark.jpg");
+  --banner-src-tablet: url("./images/bg-tablet-dark.jpg");
+  --banner-src-desktop: url("./images/bg-desktop-dark.jpg");
 
-  --themeSwitch-src: url("/images/icon-sun.svg");
+  --themeSwitch-src: url("./images/icon-sun.svg");
 }
 
 * {

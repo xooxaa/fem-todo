@@ -74,7 +74,7 @@ function readFromLocalStorage() {
 
     //create new checkmark img
     const newTodoCheckmark = document.createElement("img");
-    newTodoCheckmark.src = "/images/icon-check.svg";
+    newTodoCheckmark.src = "./images/icon-check.svg";
 
     //create new todo span
     const newTodoSpan = document.createElement("span");
@@ -83,7 +83,7 @@ function readFromLocalStorage() {
 
     //create new cross img
     const newTodoCross = document.createElement("img");
-    newTodoCross.src = "/images/icon-cross.svg";
+    newTodoCross.src = "./images/icon-cross.svg";
 
     //append checkmark, span and cross to todo container
     newTodoElement.append(newTodoCheckmark);
@@ -107,7 +107,7 @@ newTodoInput.addEventListener("keypress", (e) => {
 
     //create new checkmark img
     const newTodoCheckmark = document.createElement("img");
-    newTodoCheckmark.src = "/images/icon-check.svg";
+    newTodoCheckmark.src = "./images/icon-check.svg";
 
     //create new todo span
     const newTodoSpan = document.createElement("span");
@@ -116,7 +116,7 @@ newTodoInput.addEventListener("keypress", (e) => {
 
     //create new cross img
     const newTodoCross = document.createElement("img");
-    newTodoCross.src = "/images/icon-cross.svg";
+    newTodoCross.src = "./images/icon-cross.svg";
 
     //append checkmark, span and cross to todo container
     newTodoElement.append(newTodoCheckmark);
