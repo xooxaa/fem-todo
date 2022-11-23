@@ -223,7 +223,7 @@ body {
   color: hsl(235, 19%, 35%);
   color: var(--font-color-main);
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 0 4rem;
 }
 
@@ -247,13 +247,20 @@ body {
   cursor: pointer;
 }
 
+.todo-heading {
+  user-select: none;
+  color: hsl(236, 9%, 61%);
+  color: var(--font-color-alt);
+  padding: 0 3rem;
+}
+
 .todo input {
   flex-grow: 2;
   font-size: 1.5rem;
   background-color: hsl(0, 0%, 98%);
   background-color: var(--bg-color-todos);
-  color: hsl(235, 19%, 35%);
-  color: var(--font-color-main);
+  color: hsl(220, 98%, 61%);
+  color: var(--font-color-filter-active);
   border: none;
   border-radius: 10px;
   padding: 0 0.5rem;
@@ -265,7 +272,7 @@ body {
 }
 
 .todo:first-of-type {
-  border-radius: 10px 10px 0 0;
+  border-radius: 5px 5px 0 0;
 }
 
 .todo span {
@@ -280,7 +287,8 @@ body {
 
 .todo.checked {
   text-decoration: line-through;
-  color: #494c6b;
+  color: hsl(236, 9%, 61%);
+  color: var(--font-color-alt);
 }
 
 .todo img:first-of-type {
@@ -317,7 +325,7 @@ body {
   margin: 0 2rem;
   padding: 0.5rem 1.5rem;
 
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 5px 5px;
 }
 
 .menu .count {
@@ -371,3 +379,25 @@ body {
   color: hsl(236, 9%, 61%);
   color: var(--font-color-alt);
 }
+
+/* .debug {
+  width: 40%;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+
+.debug-item {
+  text-align: center;
+  color: purple;
+
+  padding: 0.5rem 0;
+  margin: 0.5rem;
+  border: 2px solid purple;
+
+  cursor: pointer;
+}
+
+.debug-item:hover {
+  background-color: purple;
+  color: hsl(0, 0%, 98%);
+} */

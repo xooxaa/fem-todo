@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>xx -todo</title>
     <!-- <link rel="icon" type="image/x-icon" href="favicon.ico" /> -->
+
+    <link rel="preload" href="./images/icon-check.svg" as="image" />
+    <link rel="preload" href="./images/icon-cross.svg" as="image" />
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -24,12 +27,17 @@
         </label>
       </div>
       <div class="addNew">
-        <input type="text" id="newTodo" name="newTodo" placeholder="New Todo" />
+        <input
+          type="text"
+          id="newTodo"
+          name="newTodo"
+          placeholder="New TODO..."
+        />
       </div>
 
       <div class="todos">
-        <div class="todo">
-          <span>Enter TODO above to add new item to the list</span>
+        <div class="todo todo-heading">
+          <span>Enter new TODO above to add to the list.</span>
         </div>
       </div>
 
@@ -47,6 +55,12 @@
         <p>Drag and drop to reorder list</p>
         <p>Double click any item to edit</p>
       </div>
+
+      <!-- <div class="debug">
+        <div class="debug-item debug1">Update Local Storage</div>
+        <div class="debug-item debug2">Call From Local Storage</div>
+        <div class="debug-item debug3">Delete Local Storage</div>
+      </div> -->
     </div>
 
     <script src="themeSwitcher.js"></script>
