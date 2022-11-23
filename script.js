@@ -271,51 +271,61 @@ clearCompleted.addEventListener("click", () => {
 
 readFromLocalStorage();
 
-const debug1 = document.querySelector(".debug1");
-const debug2 = document.querySelector(".debug2");
-const debug3 = document.querySelector(".debug3");
-const debug4 = document.querySelector(".debug4");
-
+//***********************************************************
+//***********************************************************
+//***********************************************************
 //used to initiate drag and store information about the dragged element
 document.addEventListener("dragstart", function (event) {
   //update target id and store id to dataTransfer
   event.target.id = "draggedElement";
   event.dataTransfer.setData("Text", event.target.id);
-
-  debug1.innerHTML = "dragstart traget id: " + event.target.id;
 });
 
 //fires permanently and is used to identify where the dragged element is currently dragged over
 document.addEventListener("dragover", function (event) {
   event.preventDefault();
-
-  debug4.innerHTML =
-    "dragover target: " +
-    event.target.nodeName +
-    " / " +
-    event.target.innerText;
-});
-
-//used to register a change in the targeted node
-document.addEventListener("dragleave", function (event) {
-  // console.log(event);
 });
 
 //fired by the target area when drag ends
 document.addEventListener("drop", function (event) {
   event.preventDefault();
 
-  debug3.innerHTML =
-    "drop target: " + event.target.nodeName + " / " + event.target.innerText;
+  const draggedTodo = document.querySelector(
+    `#${event.dataTransfer.getData("Text")}`
+  );
 
-  document
-    .querySelector(`#${event.dataTransfer.getData("Text")}`)
-    .removeAttribute("id");
+  if (
+    event.target.parentElement.classList.contains("todo") &&
+    event.target.nodeName.toLowerCase() === "span" &&
+    !event.target.parentElement.classList.contains("todo-heading")
+  ) {
+    const draggedTodoText = draggedTodo.innerText;
+    const draggedTodoChecked = draggedTodo.parentElement.classList.contains(
+      "checked"
+    );
+
+    const targetTodo = event.target;
+
+    draggedTodo.innerText = targetTodo.innerText;
+    if (targetTodo.parentElement.classList.contains("checked")) {
+      draggedTodo.parentElement.classList.add("checked");
+    } else {
+      draggedTodo.parentElement.classList.remove("checked");
+    }
+
+    targetTodo.innerText = draggedTodoText;
+    if (draggedTodoChecked) {
+      targetTodo.parentElement.classList.add("checked");
+    } else {
+      targetTodo.parentElement.classList.remove("checked");
+    }
+
+    updateLocalStorage();
+  }
 });
 
 //fired by the dragged element when drag ends
 document.addEventListener("dragend", function (event) {
-  console.log(event);
   event.target.removeAttribute("id");
 });
 

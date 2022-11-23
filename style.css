@@ -227,6 +227,11 @@ body {
   padding: 0 4rem;
 }
 
+.addNew input:focus {
+  outline: 3px solid hsl(235, 19%, 35%);
+  outline: 3px solid var(--font-color-main);
+}
+
 .todo {
   min-height: 3rem;
   font-size: 1.5rem;
@@ -249,6 +254,8 @@ body {
 
 .todo-heading {
   user-select: none;
+  text-align: center;
+  font-size: 1.3rem;
   color: hsl(236, 9%, 61%);
   color: var(--font-color-alt);
   padding: 0 3rem;
@@ -376,11 +383,12 @@ body {
 .infoSection {
   margin: 1rem 0;
   text-align: center;
+  user-select: none;
   color: hsl(236, 9%, 61%);
   color: var(--font-color-alt);
 }
 
-.debug {
+/* .debug {
   display: flex;
   place-content: center;
 }
@@ -400,4 +408,4 @@ body {
 .debug-item:hover {
   background-color: purple;
   color: hsl(0, 0%, 98%);
-}
+} */
