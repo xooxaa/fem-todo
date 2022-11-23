@@ -117,6 +117,7 @@ svg {
 }
 
 body {
+  min-height: 100vh;
   color: hsl(235, 19%, 35%);
   color: var(--font-color-main);
   background-color: hsl(0, 0%, 98%);
@@ -165,7 +166,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 2rem 2rem 1rem;
+  margin: 0rem 2rem 1rem;
+  padding-top: 2rem;
 }
 
 .header h1 {
@@ -209,7 +211,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 2rem 2rem;
+  margin: 0 2rem 3rem;
 }
 
 .addNew input {
@@ -276,14 +278,18 @@ body {
   padding: 0.5rem;
 }
 
+.todo.checked {
+  text-decoration: line-through;
+  color: #494c6b;
+}
+
 .todo img:first-of-type {
   opacity: 1;
   border-radius: 50%;
 
   /* background-color: hsl(0, 0%, 98%);
   background-color: var(--bg-color-todos); */
-  border: 3px solid hsl(236, 9%, 61%);
-  border: 3px solid var(--font-color-alt);
+  border: 3px solid #494c6b;
 }
 
 .checked img:first-of-type {

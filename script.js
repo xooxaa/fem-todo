@@ -32,7 +32,7 @@ newTodoInput.addEventListener("keypress", (e) => {
     };
 
     todos.push(newTodo);
-    console.log(todos);
+    // console.log(todos);
 
     const newTodoElement = document.createElement("div");
     newTodoElement.classList.add("todo");
@@ -52,12 +52,13 @@ newTodoInput.addEventListener("keypress", (e) => {
 
     todosList.append(newTodoElement);
 
-    console.dir(newTodoElement);
+    // console.dir(newTodoElement);
 
     newTodoInput.value = "";
   }
 });
 
+<<<<<<< HEAD
 //event listener for dblclick on todo span
 todosList.addEventListener("dblclick", (e) => {
   //check if clicked element was span
@@ -91,5 +92,22 @@ todosList.addEventListener("dblclick", (e) => {
     e.target.nextSibling.focus();
     //remove span
     e.target.remove();
+=======
+todosList.addEventListener("click", (e) => {
+  // console.log(e.target);
+
+  //check if e.target has a src (hence is an img)
+  if (e.target.src) {
+    //check if e.target is checkmark img
+    if (e.target.src.indexOf("icon-check.svg") > 0) {
+      e.target.parentElement.classList.toggle("checked");
+      console.log(e.target.nextSibling.innerText + " has been un/checked");
+    }
+    //check if e.target is cross img
+    if (e.target.src.indexOf("icon-cross.svg") > 0) {
+      e.target.parentElement.remove();
+      console.log(e.target.previousSibling.innerText + " has been deleted");
+    }
+>>>>>>> ebaa72356dddbe49d0e4563cbe0824cff8b74aa8
   }
 });
